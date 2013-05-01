@@ -20,7 +20,7 @@ end
 posts = Post.all
 
 number_of_comments.times do 
-  the_comment = Comment.new(body: Faker::Lorem.paragraph)
+  the_comment = Comment.new(body: Faker::Lorem.paragraphs)
   the_comment.author = users.sample
   the_comment.post = posts.sample
   the_comment.save
