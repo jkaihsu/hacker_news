@@ -3,8 +3,14 @@
     <h1>Post</h1>
     <h2><%= @the_post.title %></h2>
     <h5><a href='<%= @the_post.link %>'><%= @the_post.link %></a></h5>
+    <h5>Submitted by: <a href='/user/<%= @the_post.author.id %>'><%= @the_post.author.full_name %></a></h5>
     <h4><%= @the_post.body %></h4>
-    <h3>Submitted by: <a href='/user/<%= @the_post.author.id %>'><%= @the_post.author.full_name %></a></h3>
+  </div>
+  <div id="create_comment">
+    <form action='/comment/create' method='post'>
+      <textarea name='body' rows=7 cols=30 placeholder='Comment on post'></textarea>
+      <input type='submit' value='Submit'></input>
+    </form>
   </div>
   <div class="post_comments">
     <% @the_post.comments.each do |comment| %>
