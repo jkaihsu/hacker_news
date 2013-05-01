@@ -24,7 +24,6 @@ number_of_comments.times do
   the_comment.author = users.sample
   the_comment.post = posts.sample
   the_comment.save
-  posts.sample.posts << the_comment
 end
 
 author: users.sample,
