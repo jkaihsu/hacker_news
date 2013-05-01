@@ -1,0 +1,17 @@
+<div id='container'>
+  <div id='header'>
+    <h1>Post</h1>
+    <h2><%= @the_post.title %></h2>
+    <h3><a href='<%= @the_post.link %>'><%= @the_post.link %></a></h3>
+    <h3><%= @the_post.body %></h3>
+    <h3>Submitted by: <a href='/user/<%= @the_post.author.id %>'><%= @the_post.author.full_name %></a></h3>
+  </div>
+  <div class="post_comments">
+    <% @the_post.comments.each do |comment| %>
+      <div class='comment' id='comment_<%= comment.id %>'>
+        <h5>created by: <a href='/user/<%= comment.author.id %>'><%= comment.author.full_name %></a>on <%= comment.created_at %></h5>
+        <p><%= comment.body %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

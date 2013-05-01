@@ -7,6 +7,10 @@ get '/post/create' do
   erb :post_create
 end
 
+post '/post/create' do
+  Post.create(params)
+end
+
 get '/post/:id' do
   @the_post = Post.find(params[:id])
   erb :post
