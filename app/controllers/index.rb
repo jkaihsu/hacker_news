@@ -16,6 +16,12 @@ get '/post/:id' do
   erb :post
 end
 
+post '/user/create' do
+  @the_user = User.create(params)
+  session[:user_id] = @the_user.id
+  redirect '/'
+end
+
 get '/user/:id/posts' do
   @the_user = User.find(params[:id])
   erb :user_posts
@@ -33,4 +39,19 @@ end
 
 get '/login' do
   erb :login
+end
+
+post '/login' do 
+  if User.login(params)
+    @the_user = User.find_by_email(params[:email])
+    session[:user_id] = @the_user.id
+    redirect '/'
+  else
+    "Login error"
+  end
+end
+
+post '/logout' do 
+  session.clear
+  erb :index
 end
