@@ -1,11 +1,14 @@
 <div id='container'>
   <div id='header'>
-    <h1>User's Comments</h1>
-    <h2><%= @the_user.full_name %></h2>
+    <h1><%= @the_user.full_name %>'s Comments</h1>
   </div>
   <div id='comments'>
     <% @the_user.comments.each do |comment| %>
-      <a href='/post/<%= comment.post.id %>#comment_<%= comment.id %>'><%= comment.body %></a> 
+    <div id='comment'>
+      <h4><%= comment.post.title %></h4>
+      <h5><%= comment.created_at %></h5>
+      <p><a href='/post/<%= comment.post.id %>#comment_<%= comment.id %>'><%= comment.body %></a></p>
+    </div>
     <% end %>
   </div>
 </div>
