@@ -12,4 +12,20 @@ number_of_users.times do
 end
 users = User.all
 
+number_of_posts.times do 
+  users.sample.posts << Post.create(title: Faker::Lorem.sentence,
+                                    link: Faker::Internet.url,
+                                    body: Faker::Lorem.paragraph)
+end
+posts = Post.all
 
+number_of_comments.times do 
+  the_comment = Comment.new(body: Faker::Lorem.paragraph)
+  the_comment.author = users.sample
+  the_comment.post = posts.sample
+  the_comment.save
+  posts.sample.posts << the_comment
+end
+
+author: users.sample,
+post: posts.sample
