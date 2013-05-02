@@ -4,8 +4,9 @@ class CreatePostsTable < ActiveRecord::Migration
       t.string :title, :null => false
       t.string :link
       t.text :body
-      t.references :author
+      t.references :user
       t.timestamps
     end
+    add_index :posts, [:user_id]
   end
 end

@@ -1,20 +1,13 @@
-<div id="container">
-  <h1>Slacker News</h1>
-  <div id='login_logout'>
-    <p><a href='/login'>Login</a></p>
-    <p><a href='/logout'>Logout</a></p>
-  </div>
-  <div id='create_post'>
-    <p><a href='/post/create'>Create Post</a></p>
-  </div>
+
   <div id='posts'>
-    <% @all_posts.each do |post| %>
+    <% @all_posts.each_with_index do |post, i| %>
     <div class='post'>
-      <h4><a href='<%= post.link %>'><%= post.title %></a></h4>
-      <h6><%= post.link %></h6>
-      <h6><a href='/post/<%= post.id %>'><%= post.comments.length %> comments</a></h6>
+      <h4><%= i+1 %>) <%= post.title %></h4>
+      <a href='<%= post.link %>'><%= post.link %></a> |
+        <a href='/post/<%= post.id %>'><%= post.comments.length %> comments</a>
+      
     </div>
     <!-- make sure to write comment if just one -->
     <% end %>
   </div>
-</div>
+

@@ -7,17 +7,41 @@
     See: http://necolas.github.com/normalize.css/
   -->
   <link rel="stylesheet" href="/css/normalize.css">
-  <!--
-    application.css is where you put your styles
-  -->
+
   <link rel="stylesheet" href="/css/application.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title>Slacker News</title>
+  <title>HackerSauce</title>
 </head>
+
+<nav>
+  <h1><a href="/">HackerSauce</a></h1>  
+
+  <div class="navlinks">
+    <% if logged_in? %>
+    <a href='/post/create'>Create Post</a> |
+    <a href="/logout">Logout</a>
+    <p>You are currently logged in</p>
+    <% else %>
+    <a href='/login'>Login</a> |
+    <a href='/signup'>Signup</a>    
+    <% end %>
+  </div>
+</nav>
+
+
 <body>
-  <%= yield %>
+  <div class="container">
+    <%= yield %>
+  </div>
+
+  <footer>
+    <a href= "https://github.com/jkaihsu/hacker_news.git">&copy; 2013 Strong Sauce</a>
+  </footer>
+
+
+
 </body>
 </html>

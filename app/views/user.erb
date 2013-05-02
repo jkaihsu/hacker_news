@@ -1,8 +1,6 @@
-<div id='container'>
+
   <div id='header'>
-    <h1>User Profile Page</h1>
-    <h2><%= @the_user.full_name %></h2>
+    <h1><%= @user.full_name %></h1>
   </div>
-  <div id='posts'><a href='/user/<%= @the_user.id %>/posts'>Posts</a></div>
-  <div id='comments'><a href='/user/<%= @the_user.id %>/comments'>Comments</div>
-</div>
+  <div id='posts'><a href='/user/<%= @user.id %>/posts'>Posts</a></div>
+  <div id='comments'><a href='/user/<%= @user.id %>/comments'>Comments</div>

@@ -1,9 +1,99 @@
 .container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  margin: 100px auto;
+  width: 55%;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 10px;
 }
+
 th {
   text-align: left;
+}
+
+nav {
+
+  width: 100%;
+  padding: 10px;
+  height: 40px;
+  top: 0;
+  position: fixed;
+  background: black ;
+}
+
+nav h1 {
+  float: left;
+  
+}
+nav h1 a {
+  color: white;
+}
+
+nav h1 a:hover {
+  color: gray;
+}
+
+h1 {
+
+  margin: 0px;
+}
+
+nav a {
+  padding-right: 10px;
+  text-decoration: none;
+}
+
+
+h1, h2, h3, h4, h5, h6{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+footer {
+  margin: 20px auto;
+  width: 57%;
+  padding: 0px;
+  border-top: 1px solid #ddd;
+  color: black;
+  padding-top: 10px;
+}
+
+
+footer a {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+
+}
+
+
+.navlinks {
+  width: 250px;
+  padding-top: 10px;
+  float: right;
+}
+
+.navlinks a {
+  color: white;
+}
+
+.navlinks a:hover {
+  color: gray;
+}
+
+.nav-signin {
+ /*float: right;*/
+  display: inline-block;
+
+  float: right;
+  width: 440px;
+
+  line-height: 40px;
+}
+
+.button-signin {
+  color: #1492d6;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
 }
